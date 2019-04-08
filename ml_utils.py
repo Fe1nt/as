@@ -28,18 +28,15 @@ def counting(lists):    #count the dislike - like of single record
         return ('',[''])
 
 def countTwo(a):    # count the grade of first two days, that is the outcome
-    list1=[]
-    for s in a.collect():
-        grade=0
-        if len(s[1])>=2:
-            video_ID_country=s[0]
-            category=s[1][0][0]
-            grade=int(s[1][1][1])-int(s[1][0][1])
-            list1.append((video_ID_country, [category,grade]))
-    return list1
+    if len(a[1])>=2:
+        video_ID_country=a[0]
+        category=a[1][0][0]
+        grade=int(a[1][1][1])-int(a[1][0][1])
+        return(video_ID_country, [category,grade])
+
 
 def changeKey(a):   #gey the grade to the  first place for sorting 
-    videoID=a[0].strip()
+    videoID=a[0]
     category=a[1][0]
     grade=a[1][1]
 

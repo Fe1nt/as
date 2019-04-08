@@ -9,7 +9,7 @@ def cate_reducer():
     #for category, video_id, country in read_map_output(sys.stdin):
     for category, videoID, countryID in read_map_output(sys.stdin):
 
-        if videoID=="video_id": # ignore the first sheet head
+        if videoID == "video_id": # ignore the first sheet head
             continue
         #if current category is not the previews one, means the last category have finished outputting
         #we could deal with the preview category records with writtened categ

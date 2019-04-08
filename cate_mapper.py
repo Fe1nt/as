@@ -18,7 +18,7 @@ def cate_mapper():
         if len(parts) != 12:
           continue
         #Get useful things out
-        category = parts[3].strip().split()
+        category = parts[3].strip()
         videoID= parts[0].strip().split()
         country = parts[11].strip().split()
 

@@ -5,13 +5,13 @@ if [ $# -ne 2 ]; then
     echo "Usage: ./cate_driver.sh [input_location] [output_location]"
     exit 1
 fi
-#shell commands
-hadoop jar /usr/lib/hadoop/hadoop-streaming-2.8.5-amzn-1.jar \  #hadoop jar on published edition 5.21.0
--D mapreduce.job.reduces=3 \    #reduce into 3 files
--D mapreduce.job.name='Cate average' \  #job name 
--file cate_mapper.py \  #filepath
--mapper cate_mapper.py \    #filename
--file cate_reducer.py \     #filepath
--reducer cate_reducer.py \  #filename
--input $1 \     #input path
--output $2  #output path
+#shell commands, define input output path job name 
+hadoop jar /usr/lib/hadoop/hadoop-streaming-2.8.5-amzn-1.jar \ 
+-D mapreduce.job.reduces=3 \ 
+-D mapreduce.job.name='Cate average' \  
+-file cate_mapper.py \ 
+-mapper cate_mapper.py \ 
+-file cate_reducer.py \ 
+-reducer cate_reducer.py \ 
+-input $1 \ 
+-output $2 
